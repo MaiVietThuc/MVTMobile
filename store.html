@@ -1,0 +1,835 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>MVT Mobile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/stylestore.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='//fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.livequery.js"></script>
+    <link href="css/style1.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var single_li_offset = 200;
+            var current_opened_box = -1;
+
+            $('#wrap li').click(function() {
+
+                var thisID = $(this).attr('id');
+                var $this = $(this);
+
+                var id = $('#wrap li').index($this);
+
+                if (current_opened_box == id) {
+                    $('#wrap .detail-view').slideUp('slow');
+                    return false;
+                }
+                $('#cart_wrapper').slideUp('slow');
+                $('#wrap .detail-view').slideUp('slow');
+
+                current_opened_box = id;
+
+                var targetOffset = 0;
+                if (id <= 3)
+                    targetOffset = 0;
+                else if (id <= 7)
+                    targetOffset = single_li_offset;
+                else if (id <= 11)
+                    targetOffset = single_li_offset * 2;
+                else if (id <= 15)
+                    targetOffset = single_li_offset * 3;
+
+                $("html:not(:animated),body:not(:animated)").animate({
+                    scrollTop: targetOffset
+                }, 800, function() {
+
+                    $('#wrap #detail-' + thisID).slideDown(500);
+                    return false;
+                });
+
+            });
+
+            $('.close a').click(function() {
+
+                $('#wrap .detail-view').slideUp('slow');
+
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="search-bar">
+                <form>
+                    <input type="text" placeholder="Bạn tìm gì?"><input type="submit" value="Tìm Kiếm" />
+                </form>
+            </div>
+            <div class="header-top-nav">
+                <ul>
+                    <li><a href="login.html">Đăng nhập</a></li>
+                    <li><a href="#">Giỏ Hàng</a></li>
+
+                </ul>
+            </div>
+            <div class="clear"> </div>
+        </div>
+    </div>
+    <div class="clear"> </div>
+    <div class="top-header">
+        <div class="wrap">
+
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" title="logo" /></a>
+            </div>
+
+            <div class="top-nav">
+                <ul>
+                    <li><a href="index.html">TRANG CHỦ</a></li>
+                    <li><a href="store.html">ĐIỆN THOẠI</a></li>
+                    <li><a href="askanswer.html">HỎI ĐÁP</a></li>
+                    <li><a href="contact.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+        </div>
+    </div>
+    <!-------->
+    <div class="clear"> </div>
+    <div class="wrap">
+        <div class="content">
+            <div class="content-grids">
+
+                <div align="left" style="min-height:800px;">
+                    <div id="wrap" align="center">
+                        <ul>
+                            <li id="1">
+                                <img src="images/facegalaxynote10.jpg" class="items" alt="Galaxy Note 10" />
+
+                                <br clear="all" />
+                                <div>Samsung Galaxy Note 10 </div>
+                            </li>
+
+                            <li id="2">
+                                <img src="images/faceip7.png" class="items" alt="Iphone 7 plus" />
+
+                                <br clear="all" />
+                                <div>Iphone 7 plus</div>
+                            </li>
+
+                            <li id="3">
+                                <img src="images/face xiaomi minote10.jpg" class="items" alt="Xiaomi Minote 10" />
+
+                                <br clear="all" />
+                                <div>Xiaomi Minote 10</div>
+                            </li>
+                            <li id="4">
+                                <img src="images/facegalaxy a9.jpg" class="items" alt="Samsung Galaxy A9" />
+
+                                <br clear="all" />
+                                <div>Samsung Galaxy A9</div>
+                            </li>
+
+                            <div class="detail-view" id="detail-1">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/facegalaxynote10.jpg" class="detail_images" alt="galaxy note 10" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Samsung Galaxy Note 10</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Kích thước màn hình:6,8<br> Độ phân giải màn hình:2K+ (1440 x 3040 Pixels)<br> Hệ điều hành:Android<br> Chip xử lý (CPU):Chíp 8 nhân Exynos 9825<br> RAM:12GB
+                                        <br> Máy ảnh chính:12MP Tele F2.1( TOF) . 12MP F1.5/1.8/1.4(3 Khẩu độ) . 16MP F2.2 ( Camera siêu rộng 123 độ)<br> Bộ nhớ trong:256 GBDung lượng pin (mAh):4.300mAh ( sạc nhanh 45w) <br> Tiết kiệm pin, Siêu tiết kiệm
+                                        pin, Sạc pin nhanh, Sạc pin không dây
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">23.000.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+
+                            </div>
+                            <div class="detail-view" id="detail-2">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/faceip7.png" class="detail_images" alt="iphone 7 plus" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Iphone 7 Plus</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Hãng sản xuất:Apple IP<br> Kích thước màn hình:5,5 inch<br> Độ phân giải màn hình:1080 x 1920 pixels<br> Hệ điều hành:iOSChip xử lý <br> (CPU):Apple A10 Fusion<br> RAM:3GB
+                                        <br> Máy ảnh chính:2 Camera 12MP<br> Bộ nhớ trong:128GB<br> Dung lượng pin (mAh):2900 mAh
+
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">12.990.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-3">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/face xiaomi minote10.jpg" class="detail_images" alt="xiaomi minote10" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Xiaomi Minote 10</label>
+                                    <br clear="all" />
+
+
+                                    <p>
+                                        Kích thước màn hình:6.47"<br> Độ phân giải màn hình:Full HD+ (1080 x 2340 Pixels)<br> Hệ điều hành:Android 9.0 (Pie)<br> Chip xử lý (CPU):Snapdragon 730 8 nhân<br> RAM:8 GBMáy ảnh chính:Chính 108 MP & Phụ 20 MP,
+                                        12 MP, 5 MP, 2 MP<br> Bộ nhớ trong:256 GB<br> Dung lượng pin (mAh):5260 mAh
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">14.990.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-4">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/facegalaxy a9.jpg" class="detail_images" alt="facegalaxy a9" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Samsung Galalxy A9</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: Super AMOLED, 6.3", Full HD+<br> Hệ điều hành: Android 8.0 (Oreo)<br> Camera sau: Chính 24 MP & Phụ 10 MP, 8 MP, 5 MP<br> Camera trước: 24 MP<br> CPU: Snapdragon 660 8 nhân<br> RAM: 6 GB<br> Bộ nhớ trong:
+                                        128 GB
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">12.490.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+
+                            <!---->
+
+                            <li id="5">
+                                <img src="images/facegalaxyfold.jpg" class="items" alt="galaxy fold" />
+
+                                <br clear="all" />
+                                <div>Samsung Galaxy Fold</div>
+                            </li>
+
+                            <li id="6">
+                                <img src="images/facegalaxya50.png" class="items" alt="galaxy a50" />
+
+                                <br clear="all" />
+                                <div>Samsung galaxy A50</div>
+                            </li>
+
+                            <li id="7">
+                                <img src="images/faceip8.png" class="items" alt="iphone 8 plus" />
+
+                                <br clear="all" />
+                                <div>Iphone 8 Plus</div>
+                            </li>
+                            <li id="8">
+                                <img src="images/facegalaxya70.jpg" class="items" alt="galaxya70" />
+
+                                <br clear="all" />
+                                <div>Samsung Galaxy A70</div>
+                            </li>
+
+
+                            <div class="detail-view" id="detail-5">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/facegalaxyfold.jpg" class="detail_images" alt="galaxy fold" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Samsung Galaxy Fold</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: Chính: Dynamic AMOLED, phụ: Super AMOLED, Chính 7.3" & Phụ 4.6", Quad HD (2K)<br> Hệ điều hành: Android 9.0 (Pie)<br> Camera sau: Chính 12 MP & Phụ 12 MP, 16 MP<br> Camera trước: Trong: 10 MP, 8 MP; Ngoài:
+                                        10 MP<br> CPU: Snapdragon 855 8 nhân<br> RAM: 12 GB<br> Bộ nhớ trong: 512 GB
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">50.000.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-6">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/facegalaxya50.png" class="detail_images" alt="galaxya50" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Samsung Galaxy A50</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: Super AMOLED, 6.4", Full HD+<br> Hệ điều hành: Android 9.0 (Pie)<br> Camera sau: Chính 25 MP & Phụ 8 MP, 5 MP<br> Camera trước: 25 MP<br> CPU: Exynos 9610 8 nhân<br> RAM: 6 GB<br> Bộ nhớ trong: 128 GB<br>                                        Thẻ nhớ: MicroSD, hỗ trợ tối đa 512 GB
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">6.190.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-7">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/faceip8.png" class="detail_images" alt="ip8" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Iphone 8 Plus</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: LED-backlit IPS LCD, 5.5", Retina HD<br> Hệ điều hành: iOS 12<br> Camera sau: Chính 12 MP & Phụ 12 MP<br> Camera trước: 7 MP<br> CPU: Apple A11 Bionic 6 nhân<br> RAM: 3 GB<br> Bộ nhớ trong: 64 GB
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">16.990.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-8">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/facegalaxya70.jpg" class="detail_images" alt="galaxy a70" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Samsung Galaxy A70</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: Super AMOLED, 6.7", Full HD+<br> Hệ điều hành: Android 9.0 (Pie)<br> Camera sau: Chính 32 MP & Phụ 8 MP, 5 MP<br> Camera trước: 32 MP<br> CPU: Snapdragon 675 8 nhân<br> RAM: 6 GB<br> Bộ nhớ trong: 128
+                                        GB
+                                        <br> Thẻ nhớ: MicroSD, hỗ trợ tối đa 512 GB<br>
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">8.790.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+
+                            <!---->
+
+                            <li id="9">
+                                <img src="images/facegalaxys10plus.jpg" class="items" alt="galaxy note10" />
+
+                                <br clear="all" />
+                                <div><span class="name"></span><span class="price"></span>Samsung galaxy S10 Plus</div>
+                            </li>
+
+                            <li id="10">
+                                <img src="images/faceip11.jpg" class="items" alt="iphone 11" />
+
+                                <br clear="all" />
+                                <div><span class="name">Iphone 11 </span> </div>
+                            </li>
+
+                            <li id="11">
+                                <img src="images/facenokia7.2.png" class="items" alt="nokia 7.2" />
+
+                                <br clear="all" />
+                                <div>Nokia 7.2</div>
+                            </li>
+
+                            <li id="12">
+                                <img src="images/faceip11promax.jpg" class="items" alt="iphone 11 Pro Max" />
+
+                                <br clear="all" />
+                                <div><span class="name">Iphone 11 Pro Max </span></div>
+                            </li>
+
+
+                            <div class="detail-view" id="detail-9">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/facegalaxys10plus.jpg" class="detail_images" alt="galaxy s10 plus" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Samsung Galaxy S10 Plus </label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: Dynamic AMOLED, 6.4", Quad HD+ (2K+)<br> Hệ điều hành: Android 9.0 (Pie)<br> Camera sau: Chính 12 MP & Phụ 12 MP, 16 MP<br> Camera trước: Chính 10 MP & Phụ 8 MP<br> CPU: Exynos 9820 8 nhân<br> RAM: 8 GB<br>                                        Bộ nhớ trong: 512 GB
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">28.990.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-10">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/faceip11.jpg" class="detail_images" alt="iphone 11" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Ịphone 11</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: IPS LCD, 6.1", Liquid Retina<br> Hệ điều hành: iOS 13<br> Camera sau: Chính 12 MP & Phụ 12 MP<br> Camera trước: 12 MP<br> CPU: Apple A13 Bionic 6 nhân<br> RAM: 4 GB<br> Bộ nhớ trong: 128 GB<br>
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">23.990.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='iphone11promax.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-11">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/facenokia7.2.png" class="detail_images" alt="nokia 7.2" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Nokia 7.2</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: IPS LCD, 6.3", Full HD+<br> Hệ điều hành: Android 9 Pie (Android One)<br> Camera sau: Chính 48 MP & Phụ 8 MP, 5 MP<br> Camera trước: 20 MP<br> CPU: Snapdragon 660 8 nhân<br> RAM: 4 GB<br> Bộ nhớ trong:
+                                        64 GB
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">5.990.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-12">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/faceip11promax.jpg" class="detail_images" alt="iphone 11 Pro Max" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Iphone 11 Pro Max</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: OLED, 6.5", Super Retina<br> Hệ điều hành: iOS 12<br> Camera sau: Chính 12 MP & Phụ 12 MP<br> Camera trước: 7 MP<br> CPU: Apple A12 Bionic 6 nhân<br> RAM: 4 GB<br> Bộ nhớ trong: 64 GB
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">27.990.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='iphone11promax.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+
+                            <!---->
+
+                            <li id="13">
+                                <img src="images/faceoppo a9.jpg" class="items" alt="oppo a9" />
+
+                                <br clear="all" />
+                                <div><span class="name">Oppo A9</span> </div>
+                            </li>
+
+                            <li id="14">
+                                <img src="images/faceoppo reno.jpg" class="items" alt="oppo reno" />
+
+                                <br clear="all" />
+                                <div><span class="name">Oppo Reno </span> </div>
+                            </li>
+
+                            <li id="15">
+                                <img src="images/faceredminote7.jpg" class="items" alt="redmi note 7" />
+
+                                <br clear="all" />
+                                <div><span class="name">XiaoMi Redmi Note 77</span> </div>
+                            </li>
+
+                            <li id="16">
+                                <img src="images/facerelmi 5s.jpg" class="items" alt="realmi 5s" />
+
+                                <br clear="all" />
+                                <div><span class="name">RealMe 5S</span> </div>
+                            </li>
+
+
+                            <div class="detail-view" id="detail-13">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/faceoppo a9.jpg" class="detail_images" alt="oppo a9" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Oppo A9 </label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: TFT, 6.5", HD+<br> Hệ điều hành: Android 9.0 (Pie)<br> Camera sau: Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP<br> Camera trước: 16 MP<br> CPU: Snapdragon 665 8 nhân<br> RAM: 8 GB<br> Bộ nhớ trong: 128 GB
+
+                                        <br clear="all" /><br clear="all" /> Giá: &nbsp;
+                                        <span class="price">6.490.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-14">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/faceoppo reno.jpg" class="detail_images" alt="oppo reno" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Oppo Reno 2</label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: AMOLED, 6.5", Full HD+<br> Hệ điều hành: Android 9.0 (Pie)<br> Camera sau: Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP<br> Camera trước: 16 MP<br> CPU: MediaTek Helio P90 8 nhân<br> RAM: 8 GB<br> Bộ nhớ trong:
+                                        128 GB<br> Thẻ nhớ: MicroSD, hỗ trợ tối đa 256 GB
+
+                                        <br clear="all" /><br clear="all" />Giá: &nbsp;
+                                        <span class="price">14.990.000</span>
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-15">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/faceredminote7.jpg" class="detail_images" alt="redmi note 7" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>Xiaomi Redmi Note 7 </label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Màn hình: IPS LCD, 6.3", Full HD+<br> Hệ điều hành: Android 9.0 (Pie)<br> Camera sau: Chính 48 MP & Phụ 5 MP<br> Camera trước: 13 MP<br> CPU: Snapdragon 660 8 nhân<br> RAM: 4 GB<br> Bộ nhớ trong: 64 GB<br> Thẻ nhớ:
+                                        MicroSD, hỗ trợ tối đa 256 GB
+
+                                        <br clear="all" /><br clear="all" /> Giá: &nbsp;
+                                        <span class="price">4.490.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+                            <div class="detail-view" id="detail-16">
+
+                                <div class="close" align="right">
+                                    <a href="javascript:void(0)">x</a>
+
+                                </div>
+
+                                <img src="images/facerelmi 5s.jpg" class="detail_images" alt="realmi 5S" />
+
+                                <div class="detail_info">
+
+                                    <label class='item_name'>RealMe 5S </label>
+                                    <br clear="all" />
+
+                                    <p>
+                                        Kích thước màn hình:6.5"<br> Độ phân giải màn hình:HD+ (720 x 1600 Pixels)<br> Hệ điều hành:Android<br> Chip xử lý (CPU):Qualcomm Snapdragon 665 AIE, 8, 2.0GHZ<br> RAM:3 GBMáy ảnh chính:Chính 12 MP & Phụ 8 MP, 2
+                                        MP, 2 MP<br> Bộ nhớ trong:64GB<br> Dung lượng pin (mAh):Dung lượng pin khủng 5000 mAh
+
+                                        <br clear="all" /><br clear="all" /> Giá: &nbsp;
+                                        <span class="price">3.490.000</span>đ
+
+                                    </p>
+
+                                    <br clear="all" />
+                                    <button class="moreinfor-button" onclick="window.location.href='galaxynote10.html'">Chi Tiết</button>
+                                    <button class="add-to-cart-button" onclick="alert('Sản phẩm đã được thêm vào giỏ hàng')">Mua Ngay</button>
+
+                                </div>
+
+                            </div>
+
+                            <br clear="all" />
+                        </ul>
+                        <br clear="all" />
+                    </div>
+
+
+                </div>
+                <a href="#" class='viewmore'>Xem Thêm</a>
+            </div>
+        </div>
+        <div class="content-sidebar">
+            <h4>HÃNG SẢN XUẤT</h4>
+            <ul>
+                <li><a href="#">SAMSUNG</a></li>
+                <li><a href="#">APPLE</a></li>
+                <li><a href="#">XIAOMI Mobile</a></li>
+                <li><a href="#">NOKIA</a></li>
+                <li><a href="#">VSMART</a></li>
+                <li><a href="#">VIVO</a></li>
+                <li><a href="#">REALME</a></li>
+
+            </ul>
+
+            <h4>MỨC GIÁ</h4>
+            <ul>
+                <li><a href="#">Dưới 2 triệu đồng</a></li>
+                <li><a href="#">Từ 2 - 4 triệu đồng</a></li>
+                <li><a href="#">Từ 4 - 7 triệu đồng</a></li>
+                <li><a href="#">Từ 7 - 13 triệu đồng</a></li>
+                <li><a href="#">Trên 13 triệu đồng</a></li>
+            </ul>
+            <h4>CẤU HÌNH, TÍNH NĂNG</h4>
+            <h3>&nbsp;&nbsp;&nbsp;Phần cứng</h3>
+            <ul>
+                <li><a href="#">Chip SnapDragon</a></li>
+                <li><a href="#">Ram trên 6gb</a></li>
+                <li><a href="#">Bộ nhớ trong trên 64GB</a></li>
+                <li><a href="#">Màn hình FullHD trở lên</a></li>
+            </ul>
+            <h3>&nbsp;&nbsp;&nbsp;Tính năng camera</h3>
+            <ul>
+                <li><a href="#">Góc chụp rộng</a></li>
+                <li><a href="#">Xóa phông</a></li>
+                <li><a href="#">Zoom quang học</a></li>
+                <li><a href="#">Nhiều camera</a></li>
+                <h3>&nbsp;&nbsp;&nbsp;Tính năng đặc biệt</h3>
+                <li><a href="#">Bảo mật khuân mặt</a></li>
+                <li><a href="#">Bảo mật vân tay</a></li>
+                <li><a href="#">Sạc pin nhanh</a></li>
+                <li><a href="#">Pin khủng(trên 3500mAh)</a></li>
+                <li><a href="#">Sạc không dây</a></li>
+                <li><a href="#">Chống nước, chống bụi</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="clear"> </div>
+    <div class="footer">
+        <div class="wrap">
+            <div class="section group">
+                <div class="col_1_of_4 span_1_of_4">
+
+                    <h3>HỖ TRỢ DỊCH VỤ</h3>
+                    <p>Tổng đài chắm sóc khách hàng, giải đáp thắc mắc, khiếu nại:</p>
+                    <p>0336995033x (mr.Thuc) (08:30 - 11:30; 13:30 - 15:30)</p>
+                    <p>email: cskhMVTobile@gmail.com</p>
+                </div>
+
+                <div class="col_1_of_4 span_1_of_4">
+                    <h3>HỆ THỐNG CỬA HÀNG</h3>
+                    <h4>TP. Hồ Chí Minh:</h4>
+                    <p>2 Trường Sa, Phường 17, Bình Thạnh, Hồ Chí Minh</p>
+                    <h4>Hà Nội:</h4>
+                    <p>175 Tây Sơn, Đống Đa, Hà Nội.</p>
+
+
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Hướng dẫn mua hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Hình thức thanh toán</a>
+                        </li>
+                        <li>
+                            <a href="#">Tra cứu bảo hành</a>
+                        </li>
+                        <li>
+                            <a href="#">Thông tin tuyển dụng</a>
+                        </li>
+                        <li>
+                            <a href="#">Góp ý xây dựng trang web </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4 footer-lastgrid">
+                    <h3>ĐĂNG KÍ ĐỂ NHẬN NHIỀU ƯU ĐÃI:</h3>
+                    <form>
+                        <input type="text" placeholder="Nhập email của bạn"><input type="submit" value="Đăng kí">
+                    </form>
+                    <h3>Theo dõi chúng tôi:</h3>
+                    <ul>
+                        <li>
+                            <a href="#"><img src="images/facebook.png" title="Facebook" />Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/zalo.png" title="Zalo" />Zalo</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"> </div>
+    </div>
+</body>
+
+</html>
